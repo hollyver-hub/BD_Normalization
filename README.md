@@ -25,7 +25,10 @@ Abaixo está a explicação de como cada estrutura problemática do dataset orig
 ---
 
 ## 🗺️ Visualização do Modelo
+Abaixo podes comparar a evolução da modelagem do projeto, desde os dados brutos até ao banco de dados final otimizado:
 
-Para compreender a evolução da modelagem do projeto, os diagramas estruturais estão disponíveis na pasta `/design`:
-1. **`antes.png`:** Representa o cenário bruto do Kaggle, composto por tabelas planas, isoladas e com alto índice de redundância textual.
-2. **`depois.png`:** Representa o esquema relacional final implementado no SQLite, dividindo o banco de dados de forma otimizada entre tabelas Fato e Dimensão com total integridade referencial.
+### Cenário Original (Denormalizado - Kaggle)
+![Estrutura Original - Denormalizada](design/FIFA_Brute.png)
+
+### Esquema Relacional Otimizado (3ª Forma Normal)
+![Esquema Relacional Otimizado - 3FN](design/FIFA_Normalizado.png)
