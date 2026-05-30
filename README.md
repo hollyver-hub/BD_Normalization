@@ -1,6 +1,6 @@
-# ⚽ Projeto: Organização e Análise dos Dados da Copa do Mundo
+#  Projeto: Organização e Análise dos Dados da Copa do Mundo
 
-## 📌 Contexto Inicial
+##  Contexto Inicial
 
 Este projeto foi desenvolvido para a disciplina de Banco de Dados com o objetivo de aplicar engenharia reversa em um dataset denormalizado da Copa do Mundo da FIFA (1930-2014), originalmente em formato CSV. 
 
@@ -8,11 +8,11 @@ O grande desafio do arquivo original era a alta redundância e a mistura de info
 
 ---
 
-## 📐 O Antes e o Depois: Como os dados foram organizados
+##  O Antes e o Depois: Como os dados foram organizados
 
 Abaixo está a explicação de como cada estrutura problemática do dataset original foi corrigida e organizada no novo banco de dados:
 
-### 🔄 Tabela Comparativa de Estruturas
+###  Tabela Comparativa de Estruturas
 
 | O que estava desorganizado (Antes no CSV) | Como foi estruturado (Depois no Banco SQL) | Justificativa Técnica (Normalização) |
 | :--- | :--- | :--- |
@@ -24,7 +24,7 @@ Abaixo está a explicação de como cada estrutura problemática do dataset orig
 
 ---
 
-## 🗺️ Visualização do Modelo
+##  Visualização do Modelo
 Abaixo podes comparar a evolução da modelagem do projeto, desde os dados brutos até ao banco de dados final otimizado:
 
 ### Cenário Original (Denormalizado - Kaggle)
