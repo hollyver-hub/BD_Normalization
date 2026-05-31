@@ -104,12 +104,12 @@ Confira abaixo o vídeo demonstrativo do projeto, apresentando o banco de dados 
 Como parte dos requisitos de nivelamento em SQL exigidos para a disciplina, abaixo estão os certificados que comprovam a conclusão dos módulos da trilha de dados, armazenados localmente na pasta `DataCamp_Certificates`:
 
 * **Curso 1: Introduction to SQL** (Carga Horária: 2h | Concluído em: 09/04/2026) 
-  — [Abrir Certificado](DataCamp_Certificates/Introduction_to_SQL.pdf)
+  — [Abrir Certificado](DataCamp_Certificates/Introduction%20to%20SQL.pdf)
 * **Curso 2: Intermediate SQL** (Carga Horária: 4h | Concluído em: 14/04/2026) 
-  — [Abrir Certificado](DataCamp_Certificates/Intermediate_to_SQL.pdf)
+  — [Abrir Certificado](DataCamp_Certificates/Intermediate%20SQL.pdf)
 * **Curso 3: Joining Data in SQL** (Carga Horária: 4h | Concluído em: 08/05/2026) 
-  — [Abrir Certificado](DataCamp_Certificates/Joining_Data_in_SQL.pdf)
+  — [Abrir Certificado](DataCamp_Certificates/Joining%20Data%20in%20SQL.pdf)
 * **Curso 4: Introduction to Relational Databases in SQL** (Carga Horária: 4h | Concluído em: 30/05/2026) 
-  — [Abrir Certificado](DataCamp_Certificates/Introduction_to_Relational_Databases_in_SQL.pdf)
+  — [Abrir Certificado](DataCamp_Certificates/Introduction%20to%20Relational%20Databases%20in%20SQL.pdf)
 
 
