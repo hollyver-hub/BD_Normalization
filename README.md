@@ -6,6 +6,12 @@ Este projeto foi desenvolvido para a disciplina de Banco de Dados com o objetivo
 
 O grande desafio do arquivo original era a alta redundância e a mistura de informações na mesma tabela (como nomes de estádios, cidades, árbitros e gols repetidos textualmente em milhares de linhas). Para resolver isso, os dados brutos foram limpos, divididos e estruturados em um banco de dados relacional SQLite, aplicando rigorosamente as Três Formas Normais (1FN, 2FN e 3FN).
 
+### Dataset
+Os dados utilizados neste projeto foram extraídos do [Kaggle](https://www.kaggle.com/datasets/abecklas/fifa-world-cup/data?select=WorldCupPlayers.csv). 
+O conjunto de dados contém registros detalhados das Copas do Mundo da FIFA, incluindo:
+* Informações de partidas e resultados.
+* Registro de eventos (gols, cartões, substituições).
+* Dados demográficos de jogadores e times.
 ---
 
 ##  O Antes e o Depois: Como os dados foram organizados
@@ -52,7 +58,7 @@ Todo o processo de engenharia de dados — desde a carga dos arquivos brutos at�
 
 ---
 
-## Arquitetura do Processo ETL (Pipeline de Dados)
+## Arquitetura do Processo ETL 
 
 [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Bn9XqCrcuF9zfP1jOgl5IKWR4N-ObGkq?usp=sharing)
 
@@ -66,7 +72,7 @@ O pipeline executado dentro do notebook do **Google Colab** seguiu rigorosamente
 
 ---
 
-## Dossiê das Consultas SQL (15 Perguntas de Negócio)
+## Dossiê das Consultas SQL 
 
 Para validar a robustez do banco de dados e extrair inteligência sobre o histórico das Copas do Mundo, foram desenvolvidas **15 consultas analíticas**. A tabela abaixo detalha o objetivo de negócio de cada query e a justificativa técnica de sua relevância e inovação:
 
@@ -96,10 +102,7 @@ Para validar a robustez do banco de dados e extrair inteligência sobre o histó
 
 Confira abaixo o vídeo demonstrativo do projeto, apresentando o banco de dados `ATV_FINAL.db` rodando em tempo real e a explicação detalhada da lógica por trás da nossa consulta SQL mais complexa (Query 15):
 
-[![Assista ao Pitch de Demonstração](https://img.shields.io/badge/Vídeo_Demonstração-Clique_Para_Assistir-red?style=for-the-badge&logo=youtube&logoColor=white)](LINK_DO_SEU_VIDEO_AQUI)
-
-* **Duração:** [Inserir ex: 0min58s] *(Respeitando o limite estrito de 1min10s da disciplina)*
-* **O que é mostrado:** Execução da query via terminal/SGBD, comprovação da integridade das chaves estrangeiras e o retorno correto dos dados normalizados.
+https://github.com/user-attachments/assets/bacfb092-221e-4568-bb4e-c8a5b951e788
 
 ---
 
