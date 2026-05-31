@@ -33,6 +33,10 @@ Abaixo podes comparar a evolução da modelagem do projeto, desde os dados bruto
 ### Esquema Relacional Otimizado (3ª Forma Normal)
 ![Esquema Relacional Otimizado - 3FN](design/FIFA_Normalizado.png)
 
+| Imagem | Descrição |
+| :---: | :--- |
+| <img src="design/Ponto_Primary_Key.png" width="200"> | **Chaves Primárias (PKs):** As chaves primárias garantem a integridade e unicidade de cada registro no banco de dados. Elas foram estrategicamente definidas para identificar inequivocamente cada entidade (como `MatchID`, `id_team`), evitando duplicidade de dados e permitindo uma indexação eficiente para consultas rápidas. |
+| <img src="design/Ponto_Foreign_Key.png" width="200"> | **Chaves Estrangeiras (FKs):** As chaves estrangeiras estabelecem o relacionamento relacional entre as tabelas. Elas permitem que dados de entidades distintas se comuniquem, como a associação de um jogador ao seu time ou de uma partida a um estádio específico, mantendo a integridade referencial em todo o ecossistema das Copas. |
 ## Tecnologias e Ferramentas Utilizadas
 
 Todo o processo de engenharia de dados — desde a carga dos arquivos brutos até a modelagem, limpeza, formatação e população do banco de dados relacional — foi desenvolvido em ambiente em nuvem utilizando:
@@ -62,11 +66,7 @@ O pipeline executado dentro do notebook do **Google Colab** seguiu rigorosamente
 
 ---
 
-## 3. Dossiê das Consultas SQL (15 Perguntas de Negócio)
-
-Para validar a robustez do banco de dados e extrair inteligência sobre o histórico das Copas do Mundo, foram desenvolvidas **15 consultas analíticas**. A tabela abaixo detalha o objetivo de negócio de cada query e a justificativa técnica de sua relevância e inovação:
-
-## 3. Dossiê das Consultas SQL (15 Perguntas de Negócio)
+## Dossiê das Consultas SQL (15 Perguntas de Negócio)
 
 Para validar a robustez do banco de dados e extrair inteligência sobre o histórico das Copas do Mundo, foram desenvolvidas **15 consultas analíticas**. A tabela abaixo detalha o objetivo de negócio de cada query e a justificativa técnica de sua relevância e inovação:
 
@@ -92,7 +92,7 @@ Para validar a robustez do banco de dados e extrair inteligência sobre o histó
 
 ---
 
-##  4. Vídeo de Demonstração
+## Vídeo de Demonstração
 
 Confira abaixo o vídeo demonstrativo do projeto, apresentando o banco de dados `ATV_FINAL.db` rodando em tempo real e a explicação detalhada da lógica por trás da nossa consulta SQL mais complexa (Query 15):
 
@@ -103,7 +103,7 @@ Confira abaixo o vídeo demonstrativo do projeto, apresentando o banco de dados 
 
 ---
 
-## 5. Certificados DataCamp
+## Certificados DataCamp
 
 Como parte dos requisitos de nivelamento em SQL exigidos para a disciplina, abaixo estão os certificados que comprovam a conclusão dos módulos da trilha de dados, armazenados localmente na pasta `DataCamp_Certificates`:
 
