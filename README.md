@@ -66,29 +66,33 @@ O pipeline executado dentro do notebook do **Google Colab** seguiu rigorosamente
 
 Para validar a robustez do banco de dados e extrair inteligência sobre o histórico das Copas do Mundo, foram desenvolvidas **15 consultas analíticas**. A tabela abaixo detalha o objetivo de negócio de cada query e a justificativa técnica de sua relevância e inovação:
 
+## 3. Dossiê das Consultas SQL (15 Perguntas de Negócio)
+
+Para validar a robustez do banco de dados e extrair inteligência sobre o histórico das Copas do Mundo, foram desenvolvidas **15 consultas analíticas**. A tabela abaixo detalha o objetivo de negócio de cada query e a justificativa técnica de sua relevância e inovação:
+
 | Nº | Pergunta de Negócio / Objetivo da Análise | O que torna essa query inovadora/complexa? |
 | :---: | :--- | :--- |
-| **01** | *Ex: Ranking de árbitros que mais aplicaram cartões vermelhos em finais.* | *Usa agregações (`COUNT`) filtrando lances específicos na `tb_events` com junção na `tb_rounds`.* |
-| **02** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
-| **03** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
-| **04** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
-| **05** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
-| **06** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
-| **07** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
-| **08** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
-| **09** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
-| **10** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
-| **11** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
-| **12** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
-| **13** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
-| **14** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
-| **15** | *(Query Principal) Sua consulta mais complexa e inovadora do projeto.* | *Usa múltiplas subqueries, CTEs ou Window Functions cruzando eventos, partidas e elencos.* |
+| **01** | Quais seleções saíram perdendo no primeiro tempo (com base nos gols parciais de mandante/visitante) mas conseguiram virar o jogo e vencer a partida no tempo regulamentar? | Aplica lógica condicional bidirecional com `CASE WHEN` e operadores booleanos cruzados para isolar cenários alternados de viradas (*comebacks*) entre mandantes e visitantes. |
+| **02** | Quais partidas finais de Copa do Mundo tiveram os maiores públicos da história, qual foi o vencedor e onde o jogo ocorreu? | Realiza um `INNER JOIN` quádruplo interligando partidas, estádios, rounds e o histórico de campeões para criar um relatório de infraestrutura e apelo comercial. |
+| **03** | Qual árbitro é considerado o mais "pavio curto" da história das Copas do Mundo com base na maior média de cartões por jogo? | Utiliza agregação condicional (`COUNT(CASE WHEN...)`) em tabelas de eventos de jogadores, aplicando um filtro de consistência estatística no escopo agregado por meio da cláusula `HAVING`. |
+| **04** | Quais foram as maiores goleadas registradas na história das Copas do Mundo com base na diferença absoluta de gols? | Emprega a função matemática `ABS()` para calcular de forma unificada o diferencial de gols, independentemente de a dominância do placar ter sido do time mandante ou visitante. |
+| **05** | Qual é o impacto do "Fator Casa" no apelo do público, comparando a média de espectadores dos jogos do país sede contra a média geral da mesma edição? | Trata inconsistências textuais históricas de nomes de países (como fusões e sedes duplas) utilizando `CASE WHEN` combinado com operadores `LIKE` e cálculo relacional de proporção entre médias. |
+| **06** | Qual é o número de camisa mais artilheiro da história das Copas do Mundo e qual o total acumulado de gols por numeração? | Executa agrupamento baseado em atributos dinâmicos dos atletas, realizando a conversão de tipos com `CAST AS VARCHAR` para tratar e padronizar registros nulos ou ignorados. |
+| **07** | Quem são os maiores artilheiros da história que usaram estritamente a mística camisa 10 em Copas do Mundo? | Cruza os registros detalhados da tabela de fatos de eventos com metadados de escalação, filtrando o tipo de evento 'G' estringindo o escopo ao identificador fixo da numeração. |
+| **08** | Quais jogadores raros conseguiram a façanha de defender e disputar partidas por duas seleções diferentes na história do torneio? | Constrói um *Self-Join* (autojunção) em cima de uma Common Table Expression (CTE) utilizando uma restrição de desigualdade (`a.Seleção < b.Seleção`) para eliminar linhas espelhadas e duplicidades. |
+| **09** | Quais seleções possuem o maior histórico de edições consecutivas sem sofrer nenhum cartão vermelho (*Fair Play*)? | Utiliza a lógica de "Gaps and Islands" (`Year - ROW_NUMBER()`) para identificar sequências temporais ininterruptas e aplica `MAX()` para encontrar a maior série histórica de cada time. |
+| **10** | Se agruparamos as Copas do Mundo por décadas históricas, qual foi o período mais ofensivo e como a produtividade de gols se comportou com a evolução tática do esporte? | Constrói uma análise de série temporal (*trend analysis*) complexa, convertendo anos em blocos cronológicos via CTE e calculando médias móveis agregadas com ordenação personalizada para provar teses de evolução tática. |
+| **11** | Qual é a distribuição de frequência dos placares originais das partidas e qual o peso percentual de cada resultado sobre o todo? | Combina a concatenação de dados convertidos para texto com a Window Function `SUM(COUNT(*)) OVER ()` para calcular o percentual de representatividade diretamente na projeção, evitando subqueries. |
+| **12** | Qual a média de gols por partida em diferentes faixas de público (densidade de torcedores nos estádios)? | Segmenta variáveis contínuas de público em faixas categóricas, demonstrando habilidade em tratar *outliers* de público e extrair correlações estatísticas que revelam padrões de comportamento tático em diferentes escalas de arena. |
+| **13** | Quais seleções possuem a maior eficiência defensiva da história das Copas do Mundo medida pelo percentual de jogos sem sofrer gols (*Clean Sheets*)? | Desenvolve CTEs paralelas para isolar o histórico defensivo ponderado de mandante e visitante, unificando os dados através de `COALESCE` e aplicando um filtro de corte de amostragem relevante. |
+| **14** | Quais seleções consideradas "zebras" (que nunca venceram uma Copa) derrotaram campeões mundiais em tempo de execução? | Substitui subconsultas complexas por um mapeamento prévio de `LEFT JOIN` com sinalizadores binários (`0` ou `1`), consolidando os registros de forma limpa por meio da função de agregação de texto `GROUP_CONCAT`. |
+| **15** | **Quais confrontos diretos e rivalidades históricas acumularam o maior volume total de cartões amarelos e vermelhos?** | **Implementa uma normalização de paridade de confrontos via `CASE WHEN` alfabético, garantindo que o embate entre Seleção A e B seja consolidado como uma entidade única, independentemente da condição de mando de campo.** |
 
->  *Nota: Os scripts `.sql` com os códigos prontos de cada uma das 15 consultas acima encontram-se organizados dentro do arquivo/pasta `/queries` deste repositório.*
+> *Nota: Os scripts `.sql` com os códigos prontos de cada uma das 15 consultas acima encontram-se organizados dentro do arquivo/pasta `/queries` deste repositório.*
 
 ---
 
-##  4. Vídeo de Demonstração (Pitch de 1 Minuto)
+##  4. Vídeo de Demonstração
 
 Confira abaixo o vídeo demonstrativo do projeto, apresentando o banco de dados `ATV_FINAL.db` rodando em tempo real e a explicação detalhada da lógica por trás da nossa consulta SQL mais complexa (Query 15):
 
@@ -99,7 +103,7 @@ Confira abaixo o vídeo demonstrativo do projeto, apresentando o banco de dados 
 
 ---
 
-## 5. Certificados DataCamp (Nivelamento)
+## 5. Certificados DataCamp
 
 Como parte dos requisitos de nivelamento em SQL exigidos para a disciplina, abaixo estão os certificados que comprovam a conclusão dos módulos da trilha de dados, armazenados localmente na pasta `DataCamp_Certificates`:
 
