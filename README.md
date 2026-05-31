@@ -60,4 +60,56 @@ O pipeline executado dentro do notebook do **Google Colab** seguiu rigorosamente
     * Mapeamento e correspondência lógica de IDs numéricos para servirem de chaves estrangeiras.
 3.  **Loading (Carga):** Criação das tabelas relacionais com verificação de chaves (`PRAGMA foreign_keys = ON`) e inserção otimizada dos DataFrames tratados diretamente no arquivo `ATV_FINAL.db` por meio da função `.to_sql()`.
 
+---
+
+## 3. Dossiê das Consultas SQL (15 Perguntas de Negócio)
+
+Para validar a robustez do banco de dados e extrair inteligência sobre o histórico das Copas do Mundo, foram desenvolvidas **15 consultas analíticas**. A tabela abaixo detalha o objetivo de negócio de cada query e a justificativa técnica de sua relevância e inovação:
+
+| Nº | Pergunta de Negócio / Objetivo da Análise | O que torna essa query inovadora/complexa? |
+| :---: | :--- | :--- |
+| **01** | *Ex: Ranking de árbitros que mais aplicaram cartões vermelhos em finais.* | *Usa agregações (`COUNT`) filtrando lances específicos na `tb_events` com junção na `tb_rounds`.* |
+| **02** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
+| **03** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
+| **04** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
+| **05** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
+| **06** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
+| **07** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
+| **08** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
+| **09** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
+| **10** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
+| **11** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
+| **12** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
+| **13** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
+| **14** | *Sua pergunta de negócio aqui...* | *Justificativa técnica aqui...* |
+| **15** | *(Query Principal) Sua consulta mais complexa e inovadora do projeto.* | *Usa múltiplas subqueries, CTEs ou Window Functions cruzando eventos, partidas e elencos.* |
+
+>  *Nota: Os scripts `.sql` com os códigos prontos de cada uma das 15 consultas acima encontram-se organizados dentro do arquivo/pasta `/queries` deste repositório.*
+
+---
+
+##  4. Vídeo de Demonstração (Pitch de 1 Minuto)
+
+Confira abaixo o vídeo demonstrativo do projeto, apresentando o banco de dados `ATV_FINAL.db` rodando em tempo real e a explicação detalhada da lógica por trás da nossa consulta SQL mais complexa (Query 15):
+
+[![Assista ao Pitch de Demonstração](https://img.shields.io/badge/Vídeo_Demonstração-Clique_Para_Assistir-red?style=for-the-badge&logo=youtube&logoColor=white)](LINK_DO_SEU_VIDEO_AQUI)
+
+* **Duração:** [Inserir ex: 0min58s] *(Respeitando o limite estrito de 1min10s da disciplina)*
+* **O que é mostrado:** Execução da query via terminal/SGBD, comprovação da integridade das chaves estrangeiras e o retorno correto dos dados normalizados.
+
+---
+
+## 5. Certificados DataCamp (Nivelamento)
+
+Como parte dos requisitos de nivelamento em SQL exigidos para a disciplina, abaixo estão os certificados que comprovam a conclusão dos módulos da trilha de dados, armazenados localmente na pasta `DataCamp_Certificates`:
+
+* **Curso 1: Introduction to SQL** (Carga Horária: 2h | Concluído em: 09/04/2026) 
+  — [Abrir Certificado](DataCamp_Certificates/Introduction_to_SQL.pdf)
+* **Curso 2: Intermediate SQL** (Carga Horária: 4h | Concluído em: 14/04/2026) 
+  — [Abrir Certificado](DataCamp_Certificates/Intermediate_to_SQL.pdf)
+* **Curso 3: Joining Data in SQL** (Carga Horária: 4h | Concluído em: 08/05/2026) 
+  — [Abrir Certificado](DataCamp_Certificates/Joining_Data_in_SQL.pdf)
+* **Curso 4: Introduction to Relational Databases in SQL** (Carga Horária: 4h | Concluído em: 30/05/2026) 
+  — [Abrir Certificado](DataCamp_Certificates/Introduction_to_Relational_Databases_in_SQL.pdf)
+
 
