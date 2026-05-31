@@ -32,3 +32,32 @@ Abaixo podes comparar a evolução da modelagem do projeto, desde os dados bruto
 
 ### Esquema Relacional Otimizado (3ª Forma Normal)
 ![Esquema Relacional Otimizado - 3FN](design/FIFA_Normalizado.png)
+
+## Tecnologias e Ferramentas Utilizadas
+
+Todo o processo de engenharia de dados — desde a carga dos arquivos brutos até a modelagem, limpeza, formatação e população do banco de dados relacional — foi desenvolvido em ambiente em nuvem utilizando:
+
+* **Ambiente de Desenvolvimento:** [![Google Colab](https://img.shields.io/badge/Google%20Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)](https://colab.research.google.com/)
+    *Utilizado para a execução dos scripts Python, análise exploratória dos dados brutos e validação contínua em blocos de código.*
+* **Linguagem de Programação:** [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+    *Linguagem base de todo o ecossistema, garantindo automação e manipulação eficiente dos tipos de dados.*
+* **Manipulação e Tratamento de Dados:** [![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+    *Biblioteca core usada para a limpeza de strings via Expressões Regulares (Regex), tratamento de valores ausentes (NaN/Null), junções (`merge`), filtros de integridade e conversão de tipos.*
+* **Banco de Dados Relacional:** [![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+    *Engine de banco de dados utilizada para armazenar e normalizar o esquema físico final (`.db`), garantindo consistência por meio de chaves primárias, estrangeiras e restrições de unicidade (`UNIQUE`).*
+
+---
+
+## Arquitetura do Processo ETL (Pipeline de Dados)
+
+[![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Bn9XqCrcuF9zfP1jOgl5IKWR4N-ObGkq?usp=sharing)
+
+O pipeline executado dentro do notebook do **Google Colab** seguiu rigorosamente as três etapas clássicas de engenharia de dados:
+
+1.  **Extraction (Extração):** Leitura dos arquivos brutos em formato `.csv` (`WorldCups`, `WorldCupMatches` e `WorldCupPlayers`) utilizando o Pandas.
+2.  **Transformation (Transformação):** * Limpeza profunda de dados textuais (como o tratamento de strings complexas com Regex para separar nomes de árbitros e países de origem).
+    * Expansão de colunas compostas por múltiplos lances (transformando strings agregadas na linha do jogador em registros individuais para a tabela de eventos).
+    * Mapeamento e correspondência lógica de IDs numéricos para servirem de chaves estrangeiras.
+3.  **Loading (Carga):** Criação das tabelas relacionais com verificação de chaves (`PRAGMA foreign_keys = ON`) e inserção otimizada dos DataFrames tratados diretamente no arquivo `ATV_FINAL.db` por meio da função `.to_sql()`.
+
+
