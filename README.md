@@ -69,6 +69,7 @@ O pipeline executado dentro do notebook do **Google Colab** seguiu rigorosamente
     * Expansão de colunas compostas por múltiplos lances (transformando strings agregadas na linha do jogador em registros individuais para a tabela de eventos).
     * Mapeamento e correspondência lógica de IDs numéricos para servirem de chaves estrangeiras.
 3.  **Loading (Carga):** Criação das tabelas relacionais com verificação de chaves (`PRAGMA foreign_keys = ON`) e inserção otimizada dos DataFrames tratados diretamente no arquivo `ATV_FINAL.db` por meio da função `.to_sql()`.
+4.  **Consultas das queries**: Etapa responsável por organizar todas as queries abaixo citadas de forma simples e fácil de serem consultadas e atestadas.
 
 ---
 
